@@ -1,0 +1,10 @@
+#! /bin/sh
+
+mkdir $(date +"%d-%m")
+cd $(date +"%d-%m")
+
+ln -s ../utils/ utils
+touch part1.py
+touch part2.py
+touch inp.txt
+touch test_inp.txt
