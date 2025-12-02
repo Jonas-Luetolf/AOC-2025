@@ -1,3 +1,9 @@
+# AOC Input Files
+inp.txt
+test_inp.txt
+input.txt
+test_input.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
