@@ -1,7 +1,7 @@
 #! /bin/sh
 
-mkdir $(date +"%d-%m")
-cd $(date +"%d-%m")
+mkdir $(date +"%d")
+cd $(date +"%d")
 
 ln -s ../utils/ utils
 touch part1.py
