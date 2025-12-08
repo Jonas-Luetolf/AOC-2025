@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Range:
     def __init__(self, start, end):
         self.start = start
@@ -22,3 +25,31 @@ class Range:
 
     def overlaps(self, other):
         return not (self.end <= other.start or self.start >= other.end)
+
+
+def merge_sets(sets: list[set]) -> list[set]:
+    sets = deque(sets)
+    result = []
+
+    while sets:
+        first = sets.popleft()
+        merged = True
+
+        while merged:
+            merged = False
+            remaining = deque()
+
+            while sets:
+                curr = sets.popleft()
+                if first & curr:
+                    first |= curr
+                    merged = True
+
+                else:
+                    remaining.append(curr)
+
+            sets = remaining
+
+        result.append(first)
+
+    return result
